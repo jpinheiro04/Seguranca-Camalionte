@@ -15,3 +15,117 @@ Segurança Ofensiva: Atacar de forma controlada para antecipar um ataque real, e
 Subáreas como criação de ferramentas, PoC de malware e exploits, também fazem parte desta classificação.
 
 ----------------------------------------------------------------------------------------------------------------------------------
+
+Princípio de confidencialidade:
+
+• Conhecido também por princípio da Privacidade, por estar intimamente
+
+ligado à este valor (porém é mais conhecido por Confidencialidade);
+
+• É a propriedade de um sistema que tem como objetivo limitar o acesso de
+pessoas não-autorizadas à informação, ou seja, ele apenas permite que
+dados e informações sejam revelados apenas àqueles legitimamente
+autorizados pelo proprietário de tais informações;
+
+• Esses legitimados podem ser usuários, processos, sistemas, máquinas, entre
+outros.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Princípio da Integridade
+
+• Propriedade que garante que, durante a transferência da informação, ela não
+seja violada ou corrompida, mantendo a sua fidedignidade e correção;
+
+• Este princípio é portanto o garantidor da conformidade e da não violação
+dos dados;
+
+• É a garantia de que os dados não sejam indevidamente alterados, como
+gravação, inserção ou exclusão dos mesmos. Mantendo-o correto, fidedigno,
+preciso e original, sem nenhuma manipulação indevida.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Princípio da Disponibilidade
+
+• Este princípio está relacionado à garantia de que a informação esteja
+sempre disponível e acessível, quando requerida;
+
+• Garantindo que usuários autorizados, e somente estes, tenham acesso a
+informações de seus interesses sempre que necessário, para o seu uso
+legítimo.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Princípios da Segurança da Informação
+
+Autores como Sêmola em "Gestão da Segurança da Informação: uma visão
+executiva. RJ: Campus.2003”, destacam os princípios que estudamos, como os
+3 fundamentais da segurança da informação. Porém os mesmos acrescentam
+outros aspectos que se tornam princípios, são eles:
+
+• Autenticidade;
+
+• Não repudio, ou Legalidade ou Irretratabilidade.
+
+Veremos sobre estes a seguir:
+
+Princípio da Autenticidade
+
+• É a propriedade que permite garantir que o emissor de determinada
+informação seja realmente quem alega ser, assegurando que a mensagem
+é realmente proveniente da fonte declarada;
+
+• Os dados são de fato provenientes de determinada fonte.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Princípio do Não Repúdio
+
+• Este princípio, também conhecido como Legalidade ou Irrefutabilidade,
+está relacionado à garantia da impossibilidade de o emissor negar a
+autoria de determinada mensagem ou transação;
+
+• E visa garantir que a informação foi produzida em conformidade com a lei;
+
+• É a junção da Autenticidade e da Integridade, uma vez que há a garantia
+de que a pessoa que enviou é o próprio remetente, bem como a garantia de
+que a mensagem enviada não foi violada, obtendo, assim, o princípio do não
+repúdio.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Princípios da Segurança da Informação
+
+Resumindo:
+
+• Confidencialidade: garante o acesso das informações somente às pessoas
+autorizadas;
+
+• Integridade: garante a veracidade das informações, indicando que os dados
+
+não podem ser alterados sem autorização;
+
+Princípios da Segurança da Informação
+
+• Disponibilidade: garante que os dados e sistemas estejam disponíveis para
+
+pessoas autorizadas no momento em que se tornar necessário;
+
+• Autenticidade: garante a verdadeira autoria da informação, ou seja, que os
+dados são de fato provenientes de determinada fonte;
+
+• Não Repúdio: garantir que a informação foi produzida em conformidade com
+a lei e, garantir a autoria de determinada mensagem ou transação.
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+Princípio da Autenticidade
+
+• É a propriedade que permite garantir que o emissor de determinada
+informação seja realmente quem alega ser, assegurando que a mensagem
+é realmente proveniente da fonte declarada;
+
+• Os dados são de fato provenientes de determinada fonte.
+
+----------------------------------------------------------------------------------------------------------------------------------
