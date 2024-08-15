@@ -9,6 +9,7 @@ ls -lah = lista hiper detalhada mostrando arquivos ocultos
 Ctrl + L = limpar tela/rolar tela
 clear = limpa tela/rolar tela
 $ = pessoa não admnistradora
+sudo = Passe livre para fazer merda
 sudo su = Executar permissões de ADM Root: Senha kali
 sudo ls = Root sem cor
 /usr = arquivo de configuração do usuario
@@ -34,4 +35,10 @@ touch = cria arquivo em branco
 ls /etc/passwd = arquivo de senha
 less /etc/passwd = paginar leitura facilitar leitura
 / (dentro do less) = ajuda achar informações
+ls /bin = ver lixeia
+$PATH = todo caminho que tem 
+grep = procura por uma string em um arquivo de saida 
+chmod = altera as permissoes de acesso arquivo diretorio
+
+
 
