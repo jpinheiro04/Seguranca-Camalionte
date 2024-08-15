@@ -1,1 +1,37 @@
 Espaço para 2 dia de aula--
+
+Comandos básicos de sobrevivência: linux
+
+ls = listar arquivos e diretórios 
+ls -l = lista detalhada
+ls -lh = lista hiper detalhada para ver arquivos
+ls -lah = lista hiper detalhada mostrando arquivos ocultos
+Ctrl + L = limpar tela/rolar tela
+clear = limpa tela/rolar tela
+$ = pessoa não admnistradora
+sudo su = Executar permissões de ADM Root: Senha kali
+sudo ls = Root sem cor
+/usr = arquivo de configuração do usuario
+/home = equivalente ao user do windows
+/root = diretorio do usuario root
+cd = change diretory
+cd .. = voltar 
+TAB = auto completa escrita
+pwd = qual diretorio estou atualmente
+echo = repetir oque está escrito
+echo ola > oi.txt = cria txt ola
+cat = leitor de arquivo
+echo mundo >> oi.txt = adicionar mundo ao final do texto
+mv = move um arquivo ou pasta (renomeia o arquivo)
+mv meu_executavel.exe .. = volta arquivo anterior
+ls -lh *.exe = Crtl + F para pesquisar arquivos
+mkdir = criar diretório
+rmdir = remover diretório
+rm = remove um arquivo diretorio 
+rm -rf = força a remoção do diretorio 
+cp = copia um arquivo ou pasta
+touch = cria arquivo em branco
+ls /etc/passwd = arquivo de senha
+less /etc/passwd = paginar leitura facilitar leitura
+/ (dentro do less) = ajuda achar informações
+
