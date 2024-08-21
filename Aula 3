@@ -1,7 +1,8 @@
-Filtrar site
-site:
-Filtrar conteúdo
-intext:
+Filtrar site - site:
+Filtrar conteúdo - intext:
+filtrar tipo de arquivo - filetype: 
+
+
 
 Site para ver vazamentos
 https://haveibeenpwned.com/
