@@ -40,5 +40,8 @@ $PATH = todo caminho que tem
 grep = procura por uma string em um arquivo de saida 
 chmod = altera as permissoes de acesso arquivo diretorio
 -----------------------------------------------------------------------------------------------------------------------------
+Comandos Avançados
+
+find / - type f -perm -4000 2>/dev/null
 
 
