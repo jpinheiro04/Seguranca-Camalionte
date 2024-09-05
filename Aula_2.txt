@@ -1,5 +1,8 @@
 Espaço para 2 dia de aula--
 
+explainshell - Site 
+gtfobins
+
 Comandos básicos de sobrevivência: linux
 
 ls = listar arquivos e diretórios 
@@ -42,6 +45,8 @@ chmod = altera as permissoes de acesso arquivo diretorio
 -----------------------------------------------------------------------------------------------------------------------------
 Comandos Avançados
 
-find / - type f -perm -4000 2>/dev/null
+find / - type f -perm -4000 2>/dev/null = achar arquivo jogar coisa no lixo
+find / -type f -name root*.txt
+/root/root.txt
 
 
