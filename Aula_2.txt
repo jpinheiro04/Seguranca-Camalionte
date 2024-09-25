@@ -45,6 +45,8 @@ chmod = altera as permissoes de acesso arquivo diretorio
 -----------------------------------------------------------------------------------------------------------------------------
 Comandos Avançados
 
+sudo openvpn jpinheiro.ovpn
+
 echo 10.10.60.104 > alvo 
 sudo nmap -sS --top-ports 20 --open `cat alvo` -Pn 
 gobuster dir -u http://`cat alvo`/ -w /usr/share/dirb/wordlists/big.txt -q -no-errors -t 100
