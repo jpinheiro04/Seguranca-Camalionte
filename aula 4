@@ -1,6 +1,66 @@
 1. Cliente
 Identificação do Alvo
 
+Nome do CTF: BussinesCorp
+
+2. Sumário 
+Descrição das Vulnerabilidades Encontradas
+Durante o teste de intrusão na máquina "BussinesCorp," foram identificadas várias falhas de segurança devido a configurações incorretas e exposição de serviços. 
+
+#Leak
+ - https://pastebin.com/57J3tLmc -> name:"OVH Hosting LDA",
+
+ - camila@businesscorp.com.br
+ - ca123456
+ 
+ - https://pastebin.com/4Xi0ZvJp
+   
+## Vunerabilidades
+ - /css e /js -> "index of"
+ - transferencia de zona com NS2
+ - poc.php5 enviado
+  - TODO: Descobrir o path do arquivo e tentar executar
+## SO and services
+ Apache/2.2.22 (Debian) Server at businesscorp.com.br Port 80
+ 
+## NS
+ - nserver:     ns1.businesscorp.com.br 37.59.174.225
+ - nserver:     ns2.businesscorp.com.br 37.59.174.226
+ 
+http://businesscorp.com.br/~administrator/key.txt
+
+http://intranet.businesscorp.com.br:10000/
+
+ - Utilize a key g80889113568fkp9 para habilitar sua pontuacao no VLAB.
+
+Using domain server:
+Name: ns2.businesscorp.com.br.
+Address: 37.59.174.226#53
+Aliases: 
+
+businesscorp.com.br name server ns1.businesscorp.com.br.
+businesscorp.com.br name server ns2.businesscorp.com.br.
+businesscorp.com.br has address 37.59.174.225
+desafio.businesscorp.com.br has address 37.59.174.226
+ftp.businesscorp.com.br has address 37.59.174.225
+infrasecreta.businesscorp.com.br has address 37.59.174.225
+intranet.businesscorp.com.br has address 37.59.174.228
+mail.businesscorp.com.br has address 37.59.174.227
+ns1.businesscorp.com.br has address 37.59.174.225
+ns2.businesscorp.com.br has address 37.59.174.226
+parsingok.businesscorp.com.br has address 37.59.174.225
+piloto.businesscorp.com.br has address 37.59.174.230
+rh.businesscorp.com.br has address 37.59.174.229
+srvkey.businesscorp.com.br has address 37.59.174.235
+www.businesscorp.com.br has address 37.59.174.225
+Using domain server:
+Name: ns1.businesscorp.com.br.
+Address: 37.59.174.225#53
+Aliases: 
+______________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+1. Cliente
+Identificação do Alvo
+
 Nome do CTF: RootMe
 
 2. Sumário 
@@ -20,7 +80,6 @@ Essas vulnerabilidades, especialmente as de alta criticidade como o acesso ao Re
 Durante a fase de coleta, foram reunidos detalhes sobre usuários, serviços expostos e portas abertas. Isso incluiu dados como IPs, portas, versões e vazamentos de informações.
 
 Informações do Host:
-IP: ...
 Sistema Operacional: Ubuntu
 Serviços e Portas:
 Porta	Serviço	Versão	Estado
@@ -46,33 +105,18 @@ Login com usuário: ftpuser e senha: ftpdefault.
 
 Contramedida: Desativar usuários padrão e configurar autenticação robusta com senha forte e autenticação de chave pública.
 
-Vulnerabilidade 2: Redis sem Autenticação
-Severidade: Crítica
-
-Descrição: A conexão ao Redis está aberta e sem senha, permitindo que qualquer pessoa modifique o banco de dados Redis.
-
-PoC: Conexão direta ao Redis usando:
-
-bash
-
-redis-cli -h 
-Comando de escrita executado com sucesso.
-
-Contramedida: Configure uma senha segura no Redis com o parâmetro requirepass e limite o acesso a apenas IPs confiáveis.
-
 PoC: Acesso ao banco via
 
 bash
 
-
-Contramedida: Ative a autenticação no MongoDB, configure regras de firewall e limite o acesso ao banco.
+Contramedida: configure firewall e limite o acesso ao banco.
 
 ________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
 
 1. Cliente
 Identificação do Alvo
 
-Nome do CTF: Mr. Robot
+Nome do CTF: Mr.Robot
 
 2. Sumário
 Descrição das Vulnerabilidades Encontradas
@@ -90,7 +134,6 @@ Essas vulnerabilidades, especialmente aquelas envolvendo credenciais fracas e ex
 A fase de coleta identificou portas e serviços ativos, nomes de usuários, e potenciais credenciais fracas. Além disso, vazamentos de diretórios no servidor web forneceram informações valiosas para exploração.
 
 Informações do Host:
-IP: ...
 Sistema Operacional: Linux, Ubuntu-based
 Serviços e Portas:
 Porta	Serviço	Versão	Estado
