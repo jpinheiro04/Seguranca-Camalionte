@@ -1,0 +1,158 @@
+1. Cliente
+Identificação do Alvo
+
+Nome do CTF: RootMe
+
+2. Sumário 
+Descrição das Vulnerabilidades Encontradas
+Durante o teste de intrusão na máquina "RootMe," foram identificadas várias falhas de segurança devido a configurações incorretas e exposição de serviços. As vulnerabilidades podem permitir que usuários mal-intencionados acessem informações sensíveis ou controlem a máquina. Abaixo estão as principais falhas detectadas:
+
+Configuração incorreta: Vulnerabilidade devido a usuários e senhas padrão ativos.
+Repositório com código fonte exposto: Arquivos que permitem o acesso a informações sensíveis.
+Conexão Redis sem autenticação: Redis está aberto sem senha, permitindo acesso irrestrito.
+Banco de dados exposto: Acesso externo ao banco de dados sem restrições adequadas.
+Biblioteca de e-mail exposta: Possibilidade de envio de e-mails não autorizados ou vazamento de dados.
+Impacto
+Essas vulnerabilidades, especialmente as de alta criticidade como o acesso ao Redis e ao banco de dados, aumentam os riscos de invasões bem-sucedidas, vazamento de dados e compromissos de integridade dos sistemas.
+
+3. Resultados - Análise Técnica
+3.1. Coleta de Informações
+Durante a fase de coleta, foram reunidos detalhes sobre usuários, serviços expostos e portas abertas. Isso incluiu dados como IPs, portas, versões e vazamentos de informações.
+
+Informações do Host:
+IP: ...
+Sistema Operacional: Ubuntu
+Serviços e Portas:
+Porta	Serviço	Versão	Estado
+21/tcp	ftp	vsftpd 3.0.3	Open
+80/tcp	http	httpd 2.4.18 (Ubuntu)	Open
+
+Vulnerabilidades Identificadas:
+Nome de usuários: root, admin
+Senhas comuns e vulneráveis: encontradas durante o teste de autenticação.
+Serviços vazados: Redis e Banco de Dados.
+3.2. Prova de Conceito (PoC)
+Vulnerabilidade 1: FTP com Autenticação Fraca
+Severidade: Alta
+
+Descrição: O serviço FTP (vsftpd 3.0.3) está configurado com credenciais padrão, permitindo acesso sem autenticação robusta. Qualquer usuário com conhecimento das credenciais pode acessar os arquivos do servidor.
+
+PoC: Conexão ao FTP com o comando:
+
+bash
+
+ftp 
+Login com usuário: ftpuser e senha: ftpdefault.
+
+Contramedida: Desativar usuários padrão e configurar autenticação robusta com senha forte e autenticação de chave pública.
+
+Vulnerabilidade 2: Redis sem Autenticação
+Severidade: Crítica
+
+Descrição: A conexão ao Redis está aberta e sem senha, permitindo que qualquer pessoa modifique o banco de dados Redis.
+
+PoC: Conexão direta ao Redis usando:
+
+bash
+
+redis-cli -h 
+Comando de escrita executado com sucesso.
+
+Contramedida: Configure uma senha segura no Redis com o parâmetro requirepass e limite o acesso a apenas IPs confiáveis.
+
+PoC: Acesso ao banco via
+
+bash
+
+
+Contramedida: Ative a autenticação no MongoDB, configure regras de firewall e limite o acesso ao banco.
+
+________________________________________________________________________________________________________________________________________________________________________________________________________________________________________
+
+1. Cliente
+Identificação do Alvo
+
+Nome do CTF: Mr. Robot
+
+2. Sumário
+Descrição das Vulnerabilidades Encontradas
+O teste de intrusão no ambiente "Mr. Robot" identificou várias vulnerabilidades críticas relacionadas a configuração incorreta e exposição de serviços, podendo facilitar o acesso de atacantes não autorizados ao sistema. As falhas de segurança detectadas incluem:
+
+Credenciais de acesso fracas no serviço SSH: Configuração de autenticação com senha fraca.
+Diretórios ocultos expostos: Diretórios sensíveis expostos no servidor web.
+Execução de código remoto via Wordpress: Vulnerabilidade que permite execução remota.
+Configuração de sudo permissiva: Uso inseguro do sudo por usuários sem restrições adequadas.
+Impacto
+Essas vulnerabilidades, especialmente aquelas envolvendo credenciais fracas e execução de código remoto, permitem a exploração do sistema com risco de roubo de dados, acesso root, e comprometimento da integridade do servidor.
+
+3. Resultados - Análise Técnica
+3.1. Coleta de Informações
+A fase de coleta identificou portas e serviços ativos, nomes de usuários, e potenciais credenciais fracas. Além disso, vazamentos de diretórios no servidor web forneceram informações valiosas para exploração.
+
+Informações do Host:
+IP: ...
+Sistema Operacional: Linux, Ubuntu-based
+Serviços e Portas:
+Porta	Serviço	Versão	Estado
+22/tcp	ssh	OpenSSH 7.2p2 Ubuntu	Open
+80/tcp	http	Apache 2.4.18 (Ubuntu)	Open
+Vulnerabilidades Identificadas:
+Usuários conhecidos: robot, elliot
+Senhas fracas: senha descoberta durante brute force no serviço SSH.
+Serviços expostos: CMS Wordpress com plugins vulneráveis.
+3.2. Prova de Conceito (PoC)
+Vulnerabilidade 1: Credenciais SSH Fracas
+Severidade: Alta
+
+Descrição: O serviço SSH permite acesso com credenciais fracas, facilitando tentativas de força bruta.
+
+PoC: Utilizando o Hydra para força bruta:
+
+bash
+
+hydra -l robot -P /usr/share/wordlists/rockyou.txt ssh://...
+Credenciais usuário: robot, senha: abcdefg foram descobertas e usadas para acesso ao SSH.
+
+Contramedida: Configure autenticação de chave pública e desative a autenticação por senha.
+
+Vulnerabilidade 2: Exposição de Diretórios Web
+Severidade: Média
+
+Descrição: Diretórios sensíveis estão expostos no servidor, revelando arquivos que contêm informações críticas para a exploração.
+
+PoC: Comando para encontrar diretórios ocultos:
+
+bash
+
+gobuster dir -u http://... -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
+Diretório /secret acessado e contém credenciais de administrador.
+
+Contramedida: Restringir o acesso a diretórios sensíveis com configurações de .htaccess e desativar listagem de diretórios.
+
+Vulnerabilidade 3: Execução Remota via Wordpress
+Severidade: Crítica
+
+Descrição: Plugin desatualizado no Wordpress permite execução de código remoto, possibilitando que um atacante injete comandos diretamente no servidor.
+
+PoC: Explorando o plugin vulnerável:
+
+bash
+
+python3 exploit.py -u http:///wp-content/plugins/vulnplugin/ -p 'payload'
+Payload executado com sucesso, fornecendo shell reverso.
+
+Contramedida: Atualizar o CMS e plugins para a versão mais recente, e remover plugins desnecessários.
+
+Vulnerabilidade 4: Configuração de Sudo sem Restrições
+Severidade: Alta
+
+Descrição: O usuário robot possui permissões sudo sem senha, permitindo a execução de comandos privilegiados.
+
+PoC: Verificação das permissões:
+
+bash
+
+sudo -l
+Identificado acesso irrestrito ao comando /bin/bash, fornecendo controle root.
+
+Contramedida: Revogar permissões sudo sem senha para usuários não essenciais e restringir o uso de comandos com sudo.
